@@ -1,6 +1,4 @@
-Here is the completely tailored `README.md` using the precise template you provided, rewritten to perfectly match your repository link and your professional info:
 
-```markdown
 <!-- Hero Section -->
 <p align="center">
   <img src="https://img.shields.io/badge/Cognifyz-Internship-red?style=for-the-badge&logo=internetexplorer&logoColor=white"/>
@@ -95,7 +93,7 @@ Then open http://localhost:3000 (or the port shown in console).
 
 *(Replace placeholder images with actual screenshots from your project)*
 
----
+
 
 ## 🧠 Key Learnings & Challenges
 
@@ -106,32 +104,13 @@ Then open http://localhost:3000 (or the port shown in console).
 
 ---
 
-## 📈 Internship Outcomes
-
-* ✅ Completed 8 production‑grade tasks in 2 days
-* ✅ Wrote clean, documented, maintainable code
-* ✅ Learned industry workflows: Git, environment separation, modular routing
-* ✅ Earned a Certificate of Completion from Cognifyz Technologies
-
----
-
-## 🧪 How to Impress a Reviewer (Company Tips)
-
-If you’re evaluating this repository, here’s what to look for:
-
-* **Progression:** Each task adds complexity without breaking previous concepts.
-* **Error Handling:** Every server includes try/catch and user‑friendly error messages.
-* **Real-World Stack:** No frameworks – pure Node.js/Express demonstrates deep understanding.
-* **Commit History:** Atomic commits with clear messages.
-
----
 
 ## 📬 Contact & Portfolio
 
 * **Developer:** Arjun S Pai
 * **GitHub:** [ASP-31](https://www.google.com/search?q=https://github.com/ASP-31)
 * **LinkedIn:** [linkedin.com/in/arjun-s-pai](https://www.google.com/search?q=https://linkedin.com/in/arjun-s-pai)
-* **Email:** arjunspai31@gmail.com
+* **Email:** asp31.2006@gmail.com
 
 This internship repository is part of my public portfolio. I’m open to full‑stack roles and collaborations.
 
