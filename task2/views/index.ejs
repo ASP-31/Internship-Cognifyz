@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        }
+        .error {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: block;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register Account</h1>
+        <form action="/submit" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= typeof submittedData !== 'undefined' && submittedData ? submittedData.name : '' %>">
+                <% if (errors && errors.name) { %>
+                    <span class="error"><%= errors.name %></span>
+                <% } %>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= typeof submittedData !== 'undefined' && submittedData ? submittedData.email : '' %>">
+                <% if (errors && errors.email) { %>
+                    <span class="error"><%= errors.email %></span>
+                <% } %>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <% if (errors && errors.password) { %>
+                    <span class="error"><%= errors.password %></span>
+                <% } %>
+            </div>
+            <div class="form-group">
+                <label for="age">Age (18-100):</label>
+                <input type="number" id="age" name="age" min="18" max="100" value="<%= typeof submittedData !== 'undefined' && submittedData ? submittedData.age : '' %>">
+                <% if (errors && errors.age) { %>
+                    <span class="error"><%= errors.age %></span>
+                <% } %>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Clear previous inline errors (if any)
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.style.borderColor = '#ddd';
+            });
+            const errorSpans = document.querySelectorAll('.error-inline');
+            errorSpans.forEach(span => span.remove());
+
+            let valid = true;
+
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                setError('name', 'Name is required');
+                valid = false;
+            }
+
+            const email = document.getElementById('email').value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                setError('email', 'Valid email is required');
+                valid = false;
+            }
+
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                setError('password', 'Password must be at least 6 characters');
+                valid = false;
+            }
+
+            const age = document.getElementById('age').value;
+            if (age === '' || isNaN(age) || age < 18 || age > 100) {
+                setError('age', 'Age must be a number between 18 and 100');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        function setError(fieldId, message) {
+            const input = document.getElementById(fieldId);
+            input.style.borderColor = '#dc3545';
+            const errorSpan = document.createElement('span');
+            errorSpan.className = 'error error-inline';
+            errorSpan.style.color = '#dc3545';
+            errorSpan.style.fontSize = '14px';
+            errorSpan.textContent = message;
+            input.parentNode.appendChild(errorSpan);
+        }
+    </script>
+</body>
+</html>

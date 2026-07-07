@@ -7,9 +7,9 @@
   <img src="https://img.shields.io/github/last-commit/ASP-31/Internship-Cognifyz?style=for-the-badge"/>
 </p>
 
-<h1 align="center">🚀 Cognifyz Technologies – Full Stack Web Developement Internship</h1>
+<h1 align="center">Cognifyz Technologies – Full Stack Web Developement Internship</h1>
 <p align="center">
-  <strong>8 Progressive Tasks | Real‑world Projects | Production‑Grade Code</strong><br/>
+  <strong>8 Tasks</strong><br/>
   June -July 2026
 </p>
 
