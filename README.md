@@ -1,13 +1,12 @@
-
 <!-- Hero Section -->
 <p align="center">
   <img src="https://img.shields.io/badge/Cognifyz-Internship-red?style=for-the-badge&logo=internetexplorer&logoColor=white"/>
   <img src="https://img.shields.io/badge/Full%20Stack-Node.js%20%7C%20Express-green?style=for-the-badge&logo=node.js"/>
-  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge"/>
   <img src="https://img.shields.io/github/last-commit/ASP-31/Internship-Cognifyz?style=for-the-badge"/>
 </p>
 
-<h1 align="center">Cognifyz Technologies – Full Stack Web Developement Internship</h1>
+<h1 align="center">Cognifyz Technologies – Full Stack Web Development Internship</h1>
 <p align="center">
   <strong>8 Tasks</strong><br/>
   June -July 2026
@@ -17,30 +16,32 @@
 
 ## 📖 About This Repository
 
-This repository documents my **complete Full Stack Development Internship** at **Cognifyz Technologies**. Over two intense days, I built, validated, and deployed **eight incremental projects** that showcase a clear learning curve – from basic HTML forms to a fully-featured web application with authentication, external APIs, database integration, and advanced server logic.
+This repository documents my **Full Stack Development Internship** at **Cognifyz Technologies**. I am progressively completing the eight incremental projects outlined in the internship plan, showcasing a clear learning curve – from basic HTML forms to a fully‑featured web application with authentication, external APIs, database integration, and advanced server logic.
+
+**Current Status:** Tasks 1 and 2 are completed; tasks 3‑8 are in progress/planned.
 
 **Why this stands out:**
-- ✅ Each task is a **working, self‑contained project**
+- ✅ Each task is a **working, self‑contained project** (as completed)
 - ✅ Code is **modular**, **commented**, and follows best practices
 - ✅ Demonstrates both **front‑end** (HTML/CSS/JS) and **back‑end** (Node.js/Express) expertise
-- ✅ Production‑ready patterns: environment variables, logging, error handling
+- ✅ Production‑ready patterns: environment variables, logging, error handling (where applicable)
 
 ---
 
 ## 🗂️ Task Breakdown (What You’ll Find Inside)
 
-| Task | Focus Area | Key Features | Live Demo (if hosted) |
-|------|------------|--------------|------------------------|
-| **Task 1** | HTML Structure + Basic Server | Semantic HTML, minimal Express server, form submission | 🔗 [Run locally](#-getting-started) |
-| **Task 2** | Inline Styles + Server‑Side Validation | CSS styling, required field validation, error messages | 🔗 – |
-| **Task 3** | Advanced CSS + Responsive Design | Flex/Grid, media queries, mobile‑first layout | 🔗 – |
-| **Task 4** | Complex Form Validation + DOM Manipulation | Real‑time validation, dynamic error rendering, client‑side JS | 🔗 – |
-| **Task 5** | API Integration & Front‑End Interaction | Fetch API, display external data, async/await | 🔗 – |
-| **Task 6** | Database + User Authentication | SQLite/PostgreSQL, signup/login, session management | 🔗 – |
-| **Task 7** | Advanced API + External Services | `.env` secured API keys, third‑party REST APIs, data caching | 🔗 – |
-| **Task 8** | Advanced Server‑Side Functionality | Request logging (`requests.log`), middleware, advanced routing | 🔗 – |
+| Task | Focus Area | Key Features | Status |
+|------|------------|--------------|--------|
+| **Task 1** | HTML Structure + Basic Server | Semantic HTML, minimal Express server, form submission | ✅ Completed |
+| **Task 2** | Inline Styles + Server‑Side Validation | CSS styling, required field validation, error messages | ✅ Completed |
+| **Task 3** | Advanced CSS + Responsive Design | Flex/Grid, media queries, mobile‑first layout | ⏳ In Progress |
+| **Task 4** | Complex Form Validation + DOM Manipulation | Real‑time validation, dynamic error rendering, client‑side JS | ⏳ Planned |
+| **Task 5** | API Integration & Front‑End Interaction | Fetch API, display external data, async/await | ⏳ Planned |
+| **Task 6** | Database + User Authentication | SQLite/PostgreSQL, signup/login, session management | ⏳ Planned |
+| **Task 7** | Advanced API + External Services | `.env` secured API keys, third‑party REST APIs, data caching | ⏳ Planned |
+| **Task 8** | Advanced Server‑Side Functionality | Request logging (`requests.log`), middleware, advanced routing | ⏳ Planned |
 
-> **📁 Each task folder** (`task1/` … `task8/`) contains its own `README.md` with detailed setup, screenshots, and learnings.
+> **📁 Each task folder** (`task1/` … `task8/`) contains its own `README.md` with detailed setup, screenshots, and learnings (where applicable).
 
 ---
 
@@ -54,62 +55,59 @@ This repository documents my **complete Full Stack Development Internship** at *
 - **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Templating:** EJS (Embedded JavaScript)
 - **Database:** SQLite / PostgreSQL (Task 6)
-- **Authentication:** bcrypt, express-session
+- **Authentication:** bcrypt, express-session (Task 6)
 - **Logging:** Morgan / custom file logger (Task 8)
 - **Environment:** `dotenv` for API keys (Task 7)
 
 ---
 
-## 🏃 Getting Started (Run Any Task)
+## 🏃 Getting Started (Run Any Completed Task)
 
-All tasks are independent. To run **Task X**:
+All completed tasks are independent. To run **Task X** (where X is a completed task):
 
 ```bash
 # Clone the repository
 git clone [https://github.com/ASP-31/Internship-Cognifyz.git](https://github.com/ASP-31/Internship-Cognifyz.git)
 
 # Navigate to the task directory
-cd Internship-Cognifyz/taskX          # e.g., cd Internship-Cognifyz/task4
+cd Internship-Cognifyz/taskX          # e.g., cd Internship-Cognifyz/task2
 
 # Install dependencies
 npm install           
 
 # Start the local server
 node server.js        # or nodemon server.js
-
 ```
 
 Then open http://localhost:3000 (or the port shown in console).
 
-💡 Prerequisites: Node.js (v14+), npm. For Task 6, ensure your database is configured.
+💡 Prerequisites: Node.js (v14+), npm. For Task 6 (when completed), ensure your database is configured.
 
 ---
 
 ## 📸 Preview (Visual Highlights)
 
-| Task 1 – Basic Form | Task 3 – Responsive Design | Task 5 – API Data |
-| --- | --- | --- |
-|  |  |  |
+| Task 1 – Basic Form | Task 2 – Validation Form |
+| --- | --- |
+| *(Add screenshot here)* | *(Add screenshot here)* |
 
 *(Replace placeholder images with actual screenshots from your project)*
 
-
-
-## 🧠 Key Learnings & Challenges
-
-* **Task 4:** Mastering real‑time form validation without page reloads taught me the power of event listeners and DOM traversal.
-* **Task 6:** Implementing secure authentication (hashing passwords, session cookies) was a milestone in backend security.
-* **Task 7:** Using `.env` to protect API keys – a habit now embedded in all my projects.
-* **Task 8:** Building a custom request logger improved my debugging skills and understanding of middleware chains.
-
 ---
 
+## 🧠 Key Learnings & Challenges (So Far)
+
+* **Task 1:** Learned server‑side rendering with EJS, setting up routes, handling GET/POST requests.
+* **Task 2:** Implemented client‑side and server‑side validation, temporary in‑memory storage, and error handling.
+* **Upcoming Tasks:** Will tackle responsive design, advanced form validation, API integration, authentication, and advanced server‑side features.
+
+---
 
 ## 📬 Contact & Portfolio
 
 * **Developer:** Arjun S Pai
-* **GitHub:** [ASP-31](https://www.google.com/search?q=https://github.com/ASP-31)
-* **LinkedIn:** [linkedin.com/in/arjun-s-pai](https://www.google.com/search?q=https://linkedin.com/in/arjun-s-pai)
+* **GitHub:** [ASP-31](https://github.com/ASP-31)
+* **LinkedIn:** [linkedin.com/in/arjun-s-pai](https://linkedin.com/in/arjun-s-pai)
 * **Email:** asp31.2006@gmail.com
 
 This internship repository is part of my public portfolio. I’m open to full‑stack roles and collaborations.
