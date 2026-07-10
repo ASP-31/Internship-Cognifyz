@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= title %></h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/forms">Forms</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main style="text-align: center; padding: 3rem 1rem;">
+            <h2 class="text-error" style="color: var(--error-color); margin-bottom: 1rem;"><%= title %></h2>
+            <p style="margin-bottom: 2rem;"><%= message %></p>
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cognifyz Technologies Internship - Task 3</p>
+        </footer>
+    </div>
+</body>
+</html>

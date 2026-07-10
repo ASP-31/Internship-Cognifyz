@@ -18,7 +18,7 @@
 
 This repository documents my **Full Stack Development Internship** at **Cognifyz Technologies**. I am progressively completing the eight incremental projects outlined in the internship plan, showcasing a clear learning curve – from basic HTML forms to a fully‑featured web application with authentication, external APIs, database integration, and advanced server logic.
 
-**Current Status:** Tasks 1 and 2 are completed; tasks 3‑8 are in progress/planned.
+**Current Status:** Tasks 1 to 5 are completed; tasks 6‑8 are in progress/planned.
 
 **Why this stands out:**
 - ✅ Each task is a **working, self‑contained project** (as completed)
@@ -34,10 +34,10 @@ This repository documents my **Full Stack Development Internship** at **Cognifyz
 |------|------------|--------------|--------|
 | **Task 1** | HTML Structure + Basic Server | Semantic HTML, minimal Express server, form submission | ✅ Completed |
 | **Task 2** | Inline Styles + Server‑Side Validation | CSS styling, required field validation, error messages | ✅ Completed |
-| **Task 3** | Advanced CSS + Responsive Design | Flex/Grid, media queries, mobile‑first layout | ⏳ In Progress |
-| **Task 4** | Complex Form Validation + DOM Manipulation | Real‑time validation, dynamic error rendering, client‑side JS | ⏳ Planned |
-| **Task 5** | API Integration & Front‑End Interaction | Fetch API, display external data, async/await | ⏳ Planned |
-| **Task 6** | Database + User Authentication | SQLite/PostgreSQL, signup/login, session management | ⏳ Planned |
+| **Task 3** | Advanced CSS + Responsive Design | Flex/Grid, media queries, mobile‑first layout | ✅ Completed |
+| **Task 4** | Complex Form Validation + DOM Manipulation | Real‑time validation, dynamic error rendering, client‑side JS | ✅ Completed |
+| **Task 5** | API Integration & Front‑End Interaction | Fetch API, display external data, async/await, CRUD API endpoints | ✅ Completed |
+| **Task 6** | Database + User Authentication | SQLite/PostgreSQL, signup/login, session management | ⏳ In Progress |
 | **Task 7** | Advanced API + External Services | `.env` secured API keys, third‑party REST APIs, data caching | ⏳ Planned |
 | **Task 8** | Advanced Server‑Side Functionality | Request logging (`requests.log`), middleware, advanced routing | ⏳ Planned |
 
@@ -67,7 +67,7 @@ All completed tasks are independent. To run **Task X** (where X is a completed t
 
 ```bash
 # Clone the repository
-git clone [https://github.com/ASP-31/Internship-Cognifyz.git](https://github.com/ASP-31/Internship-Cognifyz.git)
+git clone https://github.com/ASP-31/Internship-Cognifyz.git
 
 # Navigate to the task directory
 cd Internship-Cognifyz/taskX          # e.g., cd Internship-Cognifyz/task2
@@ -87,7 +87,11 @@ Then open http://localhost:3000 (or the port shown in console).
 
 ## 📸 Preview (Visual Highlights)
 
-| Task 1 – Basic Form | Task 2 – Validation Form |
+| Task 1 – Basic Form | Task 2 – Validation Form | Task 3 – Responsive Dashboard |
+| --- | --- | --- |
+| *(Add screenshot here)* | *(Add screenshot here)* | *(Add screenshot here)* |
+
+| Task 4 – Routing & Validation | Task 5 – API Integration Tracker |
 | --- | --- |
 | *(Add screenshot here)* | *(Add screenshot here)* |
 
@@ -99,7 +103,10 @@ Then open http://localhost:3000 (or the port shown in console).
 
 * **Task 1:** Learned server‑side rendering with EJS, setting up routes, handling GET/POST requests.
 * **Task 2:** Implemented client‑side and server‑side validation, temporary in‑memory storage, and error handling.
-* **Upcoming Tasks:** Will tackle responsive design, advanced form validation, API integration, authentication, and advanced server‑side features.
+* **Task 3:** Designed responsive layouts using Flexbox, CSS Grid, mobile-first styling principles, custom CSS variables, and breakpoints.
+* **Task 4:** Built single-page app (SPA) client-side hash routing, dynamic element additions/removals in DOM, real-time input analysis, and password strength scoring.
+* **Task 5:** Implemented server-side REST API endpoints (GET, POST, PUT, DELETE) and integrated them with frontend asynchronous Fetch calls using `async/await`.
+* **Upcoming Tasks:** Will tackle databases, user authentication/session management, environment variables, external services integration, middleware, and request logging.
 
 ---
 
