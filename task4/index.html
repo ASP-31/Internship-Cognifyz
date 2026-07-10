@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognifyz Task 4 - Intermediate</title>
+    <style>
+        :root {
+            --primary: #e28743;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* Navbar & Routing Layout */
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary);
+        }
+
+        .view {
+            display: none;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+        }
+
+        /* Password Strength Bar */
+        .strength-meter {
+            height: 6px;
+            width: 100%;
+            background-color: #dee2e6;
+            margin-top: 0.5rem;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s, background-color 0.3s;
+        }
+
+        .feedback-text {
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        /* Dynamic DOM Elements */
+        .dynamic-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .btn-primary { background-color: var(--primary); color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; margin-bottom: 1rem; }
+        .btn-danger { background-color: var(--danger); color: white; padding: 0.5rem 1rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home" id="link-home">Home</a>
+        <a href="#register" id="link-register">Register Form</a>
+    </nav>
+
+    <section id="home" class="view">
+        <h2>Welcome to the Portal</h2>
+        <p style="margin-top: 1rem; color: #666;">This is a single-page application experience leveraging client-side hash routing.</p>
+    </section>
+
+    <section id="register" class="view">
+        <h2>Account Registration</h2>
+        <p style="margin-top: 0.25rem; margin-bottom: 1.5rem; color: #666;">Step up your security with complex form checking.</p>
+        
+        <form id="mainForm" novalidate>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+                <div id="emailFeedback" class="feedback-text"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Enter strong password">
+                <div class="strength-meter">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+                <div id="passwordFeedback" class="feedback-text"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Add Your Project Links (Optional)</label>
+                <button type="button" class="btn-secondary" id="addLinkBtn">+ Add New Link</button>
+                <div id="dynamicContainer"></div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">Complete Registration</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // ==========================================
+            // 1. CLIENT-SIDE ROUTING
+            // ==========================================
+            const routes = ['home', 'register'];
+
+            function handleRoute() {
+                const hash = window.location.hash.replace('#', '') || 'home';
+                
+                routes.forEach(route => {
+                    const view = document.getElementById(route);
+                    const navLink = document.getElementById(`link-${route}`);
+                    
+                    if (route === hash) {
+                        view.classList.add('active');
+                        navLink.classList.add('active');
+                    } else {
+                        view.classList.remove('active');
+                        navLink.classList.remove('active');
+                    }
+                });
+            }
+
+            window.addEventListener('hashchange', handleRoute);
+            handleRoute(); // Initialize routing on load
+
+
+            // ==========================================
+            // 2. COMPLEX FORM VALIDATION
+            // ==========================================
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const strengthBar = document.getElementById('strengthBar');
+            const passwordFeedback = document.getElementById('passwordFeedback');
+            const emailFeedback = document.getElementById('emailFeedback');
+
+            // Email Real-time check
+            emailInput.addEventListener('input', () => {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailRegex.test(emailInput.value)) {
+                    emailFeedback.textContent = 'Valid email format';
+                    emailFeedback.style.color = 'var(--success)';
+                } else {
+                    emailFeedback.textContent = 'Please enter a valid email address';
+                    emailFeedback.style.color = 'var(--danger)';
+                }
+            });
+
+            // Password Complexity Analysis
+            passwordInput.addEventListener('input', () => {
+                const val = passwordInput.value;
+                let score = 0;
+
+                if (!val) {
+                    strengthBar.style.width = '0%';
+                    passwordFeedback.textContent = '';
+                    return;
+                }
+
+                // Rule evaluation
+                if (val.length >= 8) score++;
+                if (/[A-Z]/.test(val)) score++;
+                if (/[0-9]/.test(val)) score++;
+                if (/[^A-Za-z0-9]/.test(val)) score++;
+
+                // Visual Updates based on score
+                switch (score) {
+                    case 1:
+                        strengthBar.style.width = '25%';
+                        strengthBar.style.backgroundColor = 'var(--danger)';
+                        passwordFeedback.textContent = 'Weak (Add capital letters, numbers, or symbols)';
+                        passwordFeedback.style.color = 'var(--danger)';
+                        break;
+                    case 2:
+                    case 3:
+                        strengthBar.style.width = '60%';
+                        strengthBar.style.backgroundColor = 'var(--warning)';
+                        passwordFeedback.textContent = 'Moderate (Make it stronger with special characters)';
+                        passwordFeedback.style.color = 'var(--warning)';
+                        break;
+                    case 4:
+                        strengthBar.style.width = '100%';
+                        strengthBar.style.backgroundColor = 'var(--success)';
+                        passwordFeedback.textContent = 'Excellent / Strong Password';
+                        passwordFeedback.style.color = 'var(--success)';
+                        break;
+                }
+            });
+
+
+            // ==========================================
+            // 3. DYNAMIC DOM MANIPULATION
+            // ==========================================
+            const addLinkBtn = document.getElementById('addLinkBtn');
+            const dynamicContainer = document.getElementById('dynamicContainer');
+            let linkCounter = 0;
+
+            addLinkBtn.addEventListener('click', () => {
+                linkCounter++;
+
+                // Create wrapper div
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'dynamic-item';
+                itemDiv.id = `link-item-${linkCounter}`;
+
+                // Create new Input field
+                const newInput = document.createElement('input');
+                newInput.type = 'url';
+                newInput.placeholder = `https://portfolio-item-${linkCounter}.com`;
+                newInput.required = true;
+
+                // Create custom remove button
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.className = 'btn-danger';
+                removeBtn.textContent = 'Delete';
+                
+                // Event listener to tear down node
+                removeBtn.addEventListener('click', () => {
+                    itemDiv.remove();
+                });
+
+                // Assemble and insert elements into DOM
+                itemDiv.appendChild(newInput);
+                itemDiv.appendChild(removeBtn);
+                dynamicContainer.appendChild(itemDiv);
+            });
+
+            // Prevent fallback submission if invalid
+            document.getElementById('mainForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Form verified and submitted successfully!');
+            });
+        });
+    </script>
+</body>
+</html>
