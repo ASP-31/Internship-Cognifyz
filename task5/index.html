@@ -106,6 +106,7 @@
                 console.error("Error creating item:", err);
             }
         });
+
         // 3. PUT DATA (UPDATE)
         async function toggleStatus(id, name, currentStatus) {
             const nextStatus = currentStatus === 'In Progress' ? 'Completed' : 'In Progress';
