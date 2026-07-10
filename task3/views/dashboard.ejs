@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= title %></h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard" class="active">Dashboard</a></li>
+                    <li><a href="/forms">Forms</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="dashboard-header">
+                <h2>User Management Dashboard</h2>
+                <div class="actions">
+                    <a href="/forms" class="btn-primary">Add New User</a>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p class="stat-value"><%= users.length %></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Users</h3>
+                    <p class="stat-value"><%= users.filter(u => u.status === 'Active').length %></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Inactive Users</h3>
+                    <p class="stat-value"><%= users.filter(u => u.status === 'Inactive').length %></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Roles</h3>
+                    <p class="stat-value"><%= [...new Set(users.map(u => u.role))].length %></p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3>User List</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (users.length === 0) { %>
+                                <tr>
+                                    <td colspan="6">No users found</td>
+                                </tr>
+                            <% } else { %>
+                                <% users.forEach(user => { %>
+                                    <tr>
+                                        <td><%= user.id %></td>
+                                        <td><%= user.name %></td>
+                                        <td><%= user.email %></td>
+                                        <td><%= user.role %></td>
+                                        <td>
+                                            <span class="status-badge <%= user.status.toLowerCase() %>">
+                                                <%= user.status %>
+                                            </span>
+                                        </td>
+                                        <td class="actions">
+                                            <a href="#" class="btn-icon">✏️ Edit</a>
+                                            <a href="#" class="btn-icon">🗑️ Delete</a>
+                                        </td>
+                                    </tr>
+                                <% }); %>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cognifyz Technologies Internship - Task 3</p>
+        </footer>
+    </div>
+</body>
+</html>
