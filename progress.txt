@@ -1,2 +1,3 @@
 Step 1: Started
 Step 2: In progress
+Step 3: Completed
