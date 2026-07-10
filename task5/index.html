@@ -106,3 +106,35 @@
                 console.error("Error creating item:", err);
             }
         });
+        // 3. PUT DATA (UPDATE)
+        async function toggleStatus(id, name, currentStatus) {
+            const nextStatus = currentStatus === 'In Progress' ? 'Completed' : 'In Progress';
+            try {
+                const response = await fetch(`${API_URL}/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, status: nextStatus })
+                });
+                if (response.ok) fetchItems();
+            } catch (err) {
+                console.error("Error updating item status:", err);
+            }
+        }
+
+        // 4. DELETE DATA (DELETE)
+        async function deleteItem(id) {
+            try {
+                const response = await fetch(`${API_URL}/${id}`, {
+                    method: 'DELETE'
+                });
+                if (response.ok) fetchItems();
+            } catch (err) {
+                console.error("Error deleting item:", err);
+            }
+        }
+
+        // Initial setup execution
+        fetchItems();
+    </script>
+</body>
+</html>
