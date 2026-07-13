@@ -85,20 +85,6 @@ Then open http://localhost:3000 (or the port shown in console).
 
 ---
 
-## 📸 Preview (Visual Highlights)
-
-| Task 1 – Basic Form | Task 2 – Validation Form | Task 3 – Responsive Dashboard |
-| --- | --- | --- |
-| *(Add screenshot here)* | *(Add screenshot here)* | *(Add screenshot here)* |
-
-| Task 4 – Routing & Validation | Task 5 – API Integration Tracker |
-| --- | --- |
-| *(Add screenshot here)* | *(Add screenshot here)* |
-
-*(Replace placeholder images with actual screenshots from your project)*
-
----
-
 ## 🧠 Key Learnings & Challenges (So Far)
 
 * **Task 1:** Learned server‑side rendering with EJS, setting up routes, handling GET/POST requests.
