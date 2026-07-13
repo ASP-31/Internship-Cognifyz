@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Operations Console | Performance & Job Scheduling Sandbox</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="glow glow-primary"></div>
+  <div class="glow glow-secondary"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="tagline">💻 Operations Control Room</div>
+      <h1>Server Operations Console</h1>
+      <p class="subtitle">Task 8: Asynchronous Background Job Schedulers, Response Caching, &amp; System Middleware Logs</p>
+    </header>
+
+    <main class="app-layout">
+      <!-- Left Column: Metrics and Cache Admin -->
+      <div class="column-left">
+        <!-- System Resource Indicators -->
+        <section class="card metrics-card">
+          <h2>📊 System Resource Monitor</h2>
+          <p class="card-desc">Simulated hardware metrics fluctuating under queue computations.</p>
+          
+          <div class="resource-grid">
+            <div class="resource-item">
+              <span class="res-label">CPU LOAD</span>
+              <div class="gauge-container">
+                <div id="cpu-bar" class="gauge-fill" style="width: 12%"></div>
+              </div>
+              <span id="cpu-text" class="res-value">12%</span>
+            </div>
+
+            <div class="resource-item">
+              <span class="res-label">MEM UTILIZATION</span>
+              <div class="gauge-container">
+                <div id="mem-bar" class="gauge-fill memory-glow" style="width: 42%"></div>
+              </div>
+              <span id="mem-text" class="res-value">42%</span>
+            </div>
+          </div>
+
+          <div class="metrics-footer">
+            <p>Connection: <span class="badge badge-success">ONLINE</span></p>
+            <p>Uptime: <span id="uptime-display">00:00:00</span></p>
+          </div>
+        </section>
+
+        <!-- Response Cache Controls -->
+        <section class="card cache-card">
+          <h2>⚡ Performance Cache Manager</h2>
+          <p class="card-desc">Routes are cached server-side to bypass heavy processes. The heavy compute endpoint is locked for 15s upon retrieval.</p>
+          
+          <div class="cache-actions">
+            <button id="btn-trigger-heavy" class="btn btn-action">Compute Prime Numbers (15s cache)</button>
+            <button id="btn-purge-cache" class="btn btn-secondary">Purge Response Cache</button>
+          </div>
+
+          <div id="heavy-result" class="heavy-result-box hidden">
+            <strong>Result:</strong>
+            <p id="heavy-result-text">...</p>
+            <small id="heavy-result-time">...</small>
+            <span id="heavy-cache-badge" class="badge">MISS</span>
+          </div>
+
+          <div class="cache-stats-grid">
+            <div class="stat-box">
+              <span class="stat-num" id="cache-hits">0</span>
+              <span class="stat-txt">Cache Hits</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num" id="cache-misses">0</span>
+              <span class="stat-txt">Cache Misses</span>
+            </div>
+          </div>
+
+          <div class="cached-keys-container">
+            <strong>Active Cache Keys:</strong>
+            <ul id="cached-keys-list">
+              <li class="empty-list">No active cached endpoints.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Asynchronous Task Dispatcher & Queue -->
+      <div class="column-right">
+        <!-- Task Spawn Centre -->
+        <section class="card spawn-card">
+          <h2>⚙️ Background Task Scheduler</h2>
+          <p class="card-desc">Instantly dispatch resource-heavy asynchronous tasks. Tasks are buffered and processed in order.</p>
+          
+          <div class="spawn-buttons">
+            <button class="btn btn-spawn" data-type="report">📁 Sales Report</button>
+            <button class="btn btn-spawn" data-type="sync">✉️ Email Sync</button>
+            <button class="btn btn-spawn" data-type="backup">💾 Database Backup</button>
+          </div>
+        </section>
+
+        <!-- Active Task Queue -->
+        <section class="card queue-card">
+          <h2>⌛ Active Background Queue</h2>
+          <p class="card-desc">Real-time status updates of pending and executing operations.</p>
+          
+          <div class="queue-header">
+            <span>Tasks Running/Queued</span>
+            <button id="btn-clear-queue" class="btn btn-text">Clear Finished</button>
+          </div>
+
+          <div class="queue-list-container">
+            <div id="jobs-list" class="jobs-list">
+              <p class="empty-list">No tasks in the scheduler. Dispatch a job above!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Active Worker Terminal Logs -->
+        <section class="card worker-logs-card">
+          <h2>📃 Worker Audit Logs</h2>
+          <p class="card-desc">Detailed step-by-step logs from the active background worker process.</p>
+          <div id="job-details-panel" class="terminal-logs empty">
+            <p class="empty-msg">Select a job above to view its live execution logs.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Bottom: Live Logs Terminal -->
+    <section class="card log-terminal-card">
+      <div class="terminal-header">
+        <h2>📂 Live Middleware Activity Terminal (requests.log)</h2>
+        <span class="live-indicator">● LIVE STREAMING</span>
+      </div>
+      <p class="card-desc">Real-time capture from custom request interceptors writing to file. Updates dynamically.</p>
+      
+      <div class="terminal-wrapper">
+        <div id="terminal-screen" class="terminal-screen">
+          <div class="terminal-line text-dim">Starting stream...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>&copy; 2026 Arjun S Pai | Cognifyz Full Stack Web Development Internship</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

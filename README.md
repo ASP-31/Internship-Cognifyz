@@ -18,7 +18,7 @@
 
 This repository documents my **Full Stack Development Internship** at **Cognifyz Technologies**. I am progressively completing the eight incremental projects outlined in the internship plan, showcasing a clear learning curve – from basic HTML forms to a fully‑featured web application with authentication, external APIs, database integration, and advanced server logic.
 
-**Current Status:** Tasks 1 to 7 are completed; task 8 is planned.
+**Current Status:** All tasks (Tasks 1 to 8) are fully completed! 🎉
 
 **Why this stands out:**
 - ✅ Each task is a **working, self‑contained project** (as completed)
@@ -39,7 +39,7 @@ This repository documents my **Full Stack Development Internship** at **Cognifyz
 | **Task 5** | API Integration & Front‑End Interaction | Fetch API, display external data, async/await, CRUD API endpoints | ✅ Completed |
 | **Task 6** | Database + User Authentication | MongoDB (Mongoose), signup/login, JWT, bcryptjs | ✅ Completed |
 | **Task 7** | Advanced API + External Services | WeatherAPI, `.env` key storage, backend cache, rate limiting | ✅ Completed |
-| **Task 8** | Advanced Server‑Side Functionality | Request logging (`requests.log`), middleware, advanced routing | ⏳ Planned |
+| **Task 8** | Advanced Server‑Side Functionality | Request logging (`requests.log`), in-memory queue, route caching | ✅ Completed |
 
 > **📁 Each task folder** (`task1/` … `task8/`) contains its own `README.md` with detailed setup, screenshots, and learnings (where applicable).
 
@@ -108,7 +108,7 @@ Then open http://localhost:3000 (or the port shown in console).
 * **Task 5:** Implemented server-side REST API endpoints (GET, POST, PUT, DELETE) and integrated them with frontend asynchronous Fetch calls using `async/await`.
 * **Task 6:** Implemented secure JWT-based stateless user authentication, dynamic Mongoose schema validators, and pre-save hooks to hash credentials via `bcryptjs`.
 * **Task 7:** Integrated third-party REST services (WeatherAPI) with `.env` secret protection, built a TTL memory cache cache system, set IP rate limits, and created a glassmorphic dashboard.
-* **Upcoming Tasks:** Will tackle advanced server‑side functionality, middleware, and request logging in Task 8.
+* **Task 8:** Implemented custom logging middleware saving entries to `requests.log`, built an asynchronous background task queue worker scheduler, set up route caching, and served a live-streaming control center dashboard.
 
 ---
 
