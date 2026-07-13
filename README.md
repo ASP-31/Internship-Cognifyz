@@ -2,7 +2,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Cognifyz-Internship-red?style=for-the-badge&logo=internetexplorer&logoColor=white"/>
   <img src="https://img.shields.io/badge/Full%20Stack-Node.js%20%7C%20Express-green?style=for-the-badge&logo=node.js"/>
-  <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-Completed-green?style=for-the-badge"/>
   <img src="https://img.shields.io/github/last-commit/ASP-31/Internship-Cognifyz?style=for-the-badge"/>
 </p>
 
