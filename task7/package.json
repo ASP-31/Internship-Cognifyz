@@ -1,0 +1,14 @@
+{
+  "name": "task7",
+  "version": "1.0.0",
+  "description": "Task 7: Advanced API Usage and External API Integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0"
+  }
+}

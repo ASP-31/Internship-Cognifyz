@@ -18,7 +18,7 @@
 
 This repository documents my **Full Stack Development Internship** at **Cognifyz Technologies**. I am progressively completing the eight incremental projects outlined in the internship plan, showcasing a clear learning curve – from basic HTML forms to a fully‑featured web application with authentication, external APIs, database integration, and advanced server logic.
 
-**Current Status:** Tasks 1 to 5 are completed; tasks 6‑8 are in progress/planned.
+**Current Status:** Tasks 1 to 7 are completed; task 8 is planned.
 
 **Why this stands out:**
 - ✅ Each task is a **working, self‑contained project** (as completed)
@@ -37,8 +37,8 @@ This repository documents my **Full Stack Development Internship** at **Cognifyz
 | **Task 3** | Advanced CSS + Responsive Design | Flex/Grid, media queries, mobile‑first layout | ✅ Completed |
 | **Task 4** | Complex Form Validation + DOM Manipulation | Real‑time validation, dynamic error rendering, client‑side JS | ✅ Completed |
 | **Task 5** | API Integration & Front‑End Interaction | Fetch API, display external data, async/await, CRUD API endpoints | ✅ Completed |
-| **Task 6** | Database + User Authentication | SQLite/PostgreSQL, signup/login, session management | ⏳ In Progress |
-| **Task 7** | Advanced API + External Services | `.env` secured API keys, third‑party REST APIs, data caching | ⏳ Planned |
+| **Task 6** | Database + User Authentication | MongoDB (Mongoose), signup/login, JWT, bcryptjs | ✅ Completed |
+| **Task 7** | Advanced API + External Services | WeatherAPI, `.env` key storage, backend cache, rate limiting | ✅ Completed |
 | **Task 8** | Advanced Server‑Side Functionality | Request logging (`requests.log`), middleware, advanced routing | ⏳ Planned |
 
 > **📁 Each task folder** (`task1/` … `task8/`) contains its own `README.md` with detailed setup, screenshots, and learnings (where applicable).
@@ -54,8 +54,8 @@ This repository documents my **Full Stack Development Internship** at **Cognifyz
 - **Backend:** Node.js, Express.js
 - **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Templating:** EJS (Embedded JavaScript)
-- **Database:** SQLite / PostgreSQL (Task 6)
-- **Authentication:** bcrypt, express-session (Task 6)
+- **Database:** MongoDB / Mongoose (Task 6)
+- **Authentication:** bcryptjs, JSON Web Tokens (JWT) (Task 6)
 - **Logging:** Morgan / custom file logger (Task 8)
 - **Environment:** `dotenv` for API keys (Task 7)
 
@@ -81,7 +81,7 @@ node server.js        # or nodemon server.js
 
 Then open http://localhost:3000 (or the port shown in console).
 
-💡 Prerequisites: Node.js (v14+), npm. For Task 6 (when completed), ensure your database is configured.
+💡 Prerequisites: Node.js (v14+), npm. For Task 6, ensure your database connection string in `.env` is configured.
 
 ---
 
@@ -106,7 +106,9 @@ Then open http://localhost:3000 (or the port shown in console).
 * **Task 3:** Designed responsive layouts using Flexbox, CSS Grid, mobile-first styling principles, custom CSS variables, and breakpoints.
 * **Task 4:** Built single-page app (SPA) client-side hash routing, dynamic element additions/removals in DOM, real-time input analysis, and password strength scoring.
 * **Task 5:** Implemented server-side REST API endpoints (GET, POST, PUT, DELETE) and integrated them with frontend asynchronous Fetch calls using `async/await`.
-* **Upcoming Tasks:** Will tackle databases, user authentication/session management, environment variables, external services integration, middleware, and request logging.
+* **Task 6:** Implemented secure JWT-based stateless user authentication, dynamic Mongoose schema validators, and pre-save hooks to hash credentials via `bcryptjs`.
+* **Task 7:** Integrated third-party REST services (WeatherAPI) with `.env` secret protection, built a TTL memory cache cache system, set IP rate limits, and created a glassmorphic dashboard.
+* **Upcoming Tasks:** Will tackle advanced server‑side functionality, middleware, and request logging in Task 8.
 
 ---
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & AQI Intel | External API & Security Sandbox</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background Gradients -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">☁️ API Intel</div>
+      <h1>Weather &amp; Air Quality Intelligence</h1>
+      <p class="subtitle">Task 7: Advanced External Services Integration &amp; Security Sandbox</p>
+    </header>
+
+    <main class="app-grid">
+      <!-- Left Column: Search & Display -->
+      <section class="card weather-section">
+        <h2>🔍 Live Location Query</h2>
+        <p class="section-desc">Search current conditions. Data is dynamically cached in the backend to minimize external API rate limits.</p>
+        
+        <div class="search-form">
+          <input type="text" id="city-input" placeholder="Enter city name (e.g. London, Paris, Tokyo...)" aria-label="City Name">
+          <button id="search-btn" class="btn-primary">Get Weather</button>
+        </div>
+
+        <!-- Feedback Messages -->
+        <div id="error-message" class="error-box hidden" role="alert"></div>
+
+        <!-- Loader -->
+        <div id="loading-spinner" class="spinner-container hidden">
+          <div class="spinner"></div>
+          <p>Contacting server...</p>
+        </div>
+
+        <!-- Weather Results Display -->
+        <div id="weather-container" class="weather-result hidden">
+          <div class="weather-header">
+            <div>
+              <h3 id="loc-name">London</h3>
+              <p id="loc-region">Greater London, United Kingdom</p>
+            </div>
+            <div class="status-badge-container">
+              <span id="source-badge" class="badge">API</span>
+            </div>
+          </div>
+
+          <div class="weather-main">
+            <div class="temp-display">
+              <span id="temp-val">15</span><span class="temp-unit">°C</span>
+            </div>
+            <div class="condition-display">
+              <img id="weather-icon" src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition">
+              <span id="condition-text">Partly Cloudy</span>
+            </div>
+          </div>
+
+          <div class="weather-stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Humidity</span>
+              <span id="humidity-val" class="stat-value">65%</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Wind Speed</span>
+              <span id="wind-val" class="stat-value">12 km/h</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Air Quality Index</span>
+              <span id="aqi-val" class="stat-value">1 (Good)</span>
+              <p id="aqi-desc" class="aqi-description">Excellent air quality</p>
+            </div>
+          </div>
+
+          <div class="cache-info">
+            <p id="local-time-label">Local Time: <span id="loc-time">12:00 PM</span></p>
+            <p id="cache-timer" class="hidden">🔄 Cached data. Refreshing cache in <span id="cache-time-left">0</span>s.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Security Sandbox (OAuth vs API Key) -->
+      <section class="card security-section">
+        <h2>🛡️ Secure Authentication Sandbox</h2>
+        <p class="section-desc">Comparing industry methods for API interaction &amp; client credentials. Loaded directly from modular server config.</p>
+        
+        <div class="auth-toggle-container">
+          <button id="toggle-api-key" class="btn-toggle active" data-target="apiKeys">API Keys</button>
+          <button id="toggle-oauth" class="btn-toggle" data-target="oauth2">OAuth 2.0</button>
+        </div>
+
+        <div id="auth-info-card" class="auth-details-card">
+          <div id="auth-loading" class="spinner-container small">
+            <div class="spinner"></div>
+          </div>
+          <div id="auth-content" class="hidden">
+            <h3 id="auth-title">API Keys</h3>
+            <div class="auth-detail-group">
+              <strong>💡 Primary Purpose:</strong>
+              <p id="auth-purpose">Loading...</p>
+            </div>
+            <div class="auth-detail-group">
+              <strong>🎯 Scope &amp; Access:</strong>
+              <p id="auth-scope">Loading...</p>
+            </div>
+            <div class="auth-detail-group">
+              <strong>🔒 Security Implications:</strong>
+              <p id="auth-security">Loading...</p>
+            </div>
+            <div class="auth-detail-group">
+              <strong>⚙️ Request Workflow:</strong>
+              <p id="auth-workflow">Loading...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>&copy; 2026 Arjun S Pai | Cognifyz Full Stack Web Development Internship</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
