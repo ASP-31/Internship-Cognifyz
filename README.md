@@ -102,7 +102,7 @@ Then open http://localhost:3000 (or the port shown in console).
 
 * **Developer:** Arjun S Pai
 * **GitHub:** [ASP-31](https://github.com/ASP-31)
-* **LinkedIn:** [linkedin.com/in/arjun-s-pai](https://linkedin.com/in/arjun-s-pai)
+* **LinkedIn:** [https://www.linkedin.com/in/arjun-s-pai-263834327/](https://www.linkedin.com/in/arjun-s-pai-263834327/)
 * **Email:** asp31.2006@gmail.com
 
 This internship repository is part of my public portfolio. I’m open to full‑stack roles and collaborations.
